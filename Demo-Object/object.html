@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+
+<body>
+    <h1>Javascript Object</h1>
+    <p id="demo"></p>
+
+    <h1>Student Details</h1>
+    <div id="demo1"></div>
+    <div id="demo2"></div>
+    <script>
+        // Create the student object using object literal syntax
+        var student1 = {
+            name: 'Shiva',
+            age: 25,
+            studies: 'MBA'
+        };
+
+        // Display details of student1 in the element with ID "demo1"
+        document.getElementById("demo1").innerHTML =
+            student1.name + " of the age " + student1.age + " studies " + student1.studies;
+
+        // Create another student object using the 'new Object()' syntax
+        var student2 = new Object();
+        student2.name = 'Shivarth';
+        student2.age = 25;
+        student2.studies = 'MBA';
+
+        // Display details of student2 in the element with ID "demo2"
+        document.getElementById("demo2").innerHTML =
+            student2.name + " of the age " + student2.age + " studies " + student2.studies;
+    </script>
+
+    <script>
+        // Define a constructor function for a student object
+        function stud(name, age, studies) {
+            this.name = name; // Assign the name property
+            this.age = age;   // Assign the age property
+            this.studies = studies; // Assign the studies property
+        }
+
+        // Create a new student object using the 'new' keyword
+        var student = new stud("Shivath Dronachary", 25, "MBA in DS");
+
+        // Display the student object details in the HTML element with ID "demo"
+        document.getElementById("demo").innerHTML =
+            "Name: " + student.name + "<br>" +
+            "Age: " + student.age + "<br>" +
+            "Studies: " + student.studies;
+    </script>
+
+   </body>
+
+</html>

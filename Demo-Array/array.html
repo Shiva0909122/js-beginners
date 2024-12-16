@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Array</title>
+</head>
+<body>
+    <p id="demo"></p>
+</body>
+<script>
+    // Declare an array of full-stack web development (FSWD) technologies
+let fswd = ["html", "css", "js", "bootstrap", "nodejs", "expressjz", "mongodb", "reactjs"];
+
+// Display the entire array in the element with ID "demo"
+document.getElementById("demo").innerHTML = fswd;
+
+// Extract the first element ("html") from the array and display it
+let html = fswd[0];
+document.getElementById("demo").innerHTML = html;
+
+// Calculate the length of the string "html" and display it
+let len = html.length;
+document.getElementById("demo").innerHTML = len;
+
+// Get the last element of the array without modifying the array
+let last = fswd[fswd.length - 1];
+// Note: This is commented out, but it would display the last element
+// document.getElementById("demo").innerHTML = last;
+
+// Use the forEach method to log each element and its index in the array
+fswd.forEach((item, index) => {
+  console.log(item, index);
+});
+
+// Convert the array to a string and display it
+document.getElementById("demo").innerHTML = fswd.toString();
+
+// Remove the last element from the array and display it
+let last1 = fswd.pop();
+document.getElementById("demo").innerHTML = last1;
+
+// Get the new last element of the array after popping and log it
+let last2 = fswd[fswd.length - 1];
+console.log(last2);
+
+// Add a new element ("php") to the end of the array and display it
+fswd.push("php");
+document.getElementById("demo").innerHTML = fswd;
+
+// Remove the first element of the array and display the updated array
+fswd.shift();
+document.getElementById("demo").innerHTML = fswd;
+
+// Add a new element ("html5") to the beginning of the array and display it
+fswd.unshift("html5");
+document.getElementById("demo").innerHTML = fswd;
+
+// Declare a new array of data science (DS) technologies
+let ds = ['python', 'sql', 'ml', 'nlp'];
+
+// Merge the FSWD and DS arrays and display the resulting array
+let ds1 = fswd.concat(ds);
+document.getElementById("demo").innerHTML = ds1;
+
+// Sort the merged array alphabetically and display it
+ds1.sort();
+document.getElementById("demo").innerHTML = ds1;
+
+// Reverse the sorted array and display it
+ds1.reverse();
+document.getElementById("demo").innerHTML = ds1;
+
+// Declare an array of numbers from 1 to 10
+let num1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Use the map method to multiply each number by 2 and display the new array
+let num2 = num1.map(multiply);
+function multiply(value) {
+  return value * 2;
+}
+document.getElementById("demo").innerHTML = num2;
+
+// Use the filter method to extract numbers greater than 3 and display the result
+let num3 = num1.filter(comp);
+function comp(value) {
+  return value > 3;
+}
+document.getElementById("demo").innerHTML = num3;
+
+// Use the reduce method to sum up all the numbers in the array and display the result
+let num4 = num1.reduce(sum);
+function sum(total, value) {
+  return total + value;
+}
+document.getElementById("demo").innerHTML = num4;
+
+</script>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+
+<body>
+    <!-- Paragraph and div to display output -->
+    <p id="demo"></p>
+    <div id="demo1"></div>
+
+    <!-- Function that calculates the square of a value -->
+    <script>
+        function My_function(val) {
+            document.getElementById("demo").innerHTML = val * val; // Display square of the input
+        }
+        My_function(6); // Call the function with 6
+    </script>
+
+    <!-- Anonymous function example -->
+    <script>
+        let x = function () {
+            alert("Hello, This is Function Class"); // Show an alert
+        };
+        x(); // Execute the function
+    </script>
+
+    <!-- Dynamic function using the Function constructor -->
+    <script>
+        var My_function1 = new Function("a", "b", "return a + b"); // Function that adds two numbers
+        var y = My_function1(2, 4); // Call the function with arguments 2 and 4
+        document.getElementById("demo").innerHTML = "The sum is " + y; // Display the result
+    </script>
+
+    <!-- Immediately Invoked Function Expression (IIFE) -->
+    <script>
+        (function () {
+            alert("Hello! Welcome"); // Show a welcome message
+        })();
+
+        // Function that calculates the product and multiplies by 2
+        function Product(a, b) {
+            return a * b;
+        }
+        let z = Product(67, 97) * 2; // Calculate and double the product
+        document.getElementById("demo").innerHTML = "The Product is " + z;
+    </script>
+
+    <!-- Dynamic function to calculate the area of a circle -->
+    <script>
+        var body = "return Math.PI * rad * rad"; // Body of the function
+        var circle = new Function("rad", body); // Create a function to calculate circle area
+        alert(circle(7)); // Alert the area for a radius of 7
+    </script>
+
+    <!-- Arrow function to calculate product of three numbers -->
+    <script>
+        const Myfunc = (a, b, c) => {
+            return a * b * c;
+        };
+        let mul = Myfunc(34, 7, 9); // Calculate product of three numbers
+        document.getElementById("demo").innerHTML = "The Product of 3 digits is " + mul;
+    </script>
+
+    <!-- Generator function example -->
+    <script>
+        function* generatefun() {
+            yield 1; // First value
+            yield 2; // Second value
+            yield 3; // Third value
+        }
+        let generator = generatefun(); // Initialize generator
+        let one = generator.next(); // Get first value
+        let two = generator.next(); // Get second value
+        let three = generator.next(); // Get third value
+        alert(JSON.stringify(one)); // Alert first value
+        alert(JSON.stringify(two)); // Alert second value
+        alert(JSON.stringify(three)); // Alert third value
+    </script>
+
+    <!-- Example using eval -->
+    <script>
+        let a = 5;
+        let b = 6;
+        let c = 7;
+        console.log(eval("a + b")); // Evaluate expression to sum a and b
+        console.log(eval(c)); // Evaluate and print value of c
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+
+<body>
+    <h1>JavaScript Loops</h1>
+    <script>
+        // Example of a 'for' loop:
+        // Iterates from 0 to 4 and logs each value to the console.
+        // Uncomment to see the output.
+        // let i = 0;
+        // for (i = 0; i < 5; i++) {
+        //     console.log(i);
+        // }
+
+        // Example of a 'while' loop:
+        // Logs values from 0 to 4 using a condition before each iteration.
+        // Uncomment to see the output.
+        // let i = 0;
+        // while (i <= 4) {
+        //     console.log(i);
+        //     i++;
+        // }
+
+        // Example of a 'do-while' loop:
+        // Executes the code block at least once, then continues if the condition is true.
+        // Uncomment to see the output.
+        // let i = 1;
+        // do {
+        //     console.log(i);
+        //     i++;
+        // } while (i < 10);
+
+        // Example of a 'for' loop with a 'break' statement:
+        // Exits the loop when `i` equals 6.
+        // Uncomment to see the output.
+        // let i;
+        // for (i = 0; i < 15; i++) {
+        //     console.log(i);
+        //     if (i == 6) break;
+        // }
+
+        // Example of a 'for' loop with a 'continue' statement:
+        // Skips the current iteration when `i` equals 0.
+        // Continues with the next iteration.
+        let i;
+        for (i = 0; i < 15; i++) {
+            if (i == 0) {
+                continue; // Skip the current iteration when `i` is 0
+            }
+            console.log(i); // Log the value of `i` to the console
+        }
+    </script>
+</body>
+
+</html>

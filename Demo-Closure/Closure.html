@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+
+<body>
+    <!-- A container where content could be displayed -->
+    <div id="demo"></div>
+
+    <script>
+        // Example of a simple function and variable scope
+        let a = 10; // Global variable
+        function myfn() {
+            let b = 20; // Local variable to `myfn`
+            // Write the sum of `a` and `b` to the document
+            document.write(a + b + "<br/>");
+        }
+        myfn(); // Call the function to execute its logic
+
+        // Example of closures in JavaScript
+        var c = 10; // Global variable
+        function firstfn() {
+            var d = 30; // Local variable in `firstfn`
+
+            // Nested function demonstrating closure
+            function secondfn() {
+                // Accesses variables from its own, parent, and global scopes
+                var e = 10 + c + d + 50;
+                return e; // Returns the computed value
+            }
+            return secondfn(); // Calls `secondfn` and returns its result
+        }
+
+        // Store the result of calling `firstfn` in a variable
+        var sum = firstfn();
+        // Display the result
+        document.write("The sum is " + sum);
+    </script>
+</body>
+
+</html>

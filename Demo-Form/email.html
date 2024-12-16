@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+    <script type="text/javascript">
+        // Function to validate the email input
+        function validate() {
+            // Retrieve the value entered in the input field with id "text"
+            var mail = document.getElementById("text").value;
+            
+            // Regular expression to validate the email format
+            var regx = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/;
+
+            // Check if the email matches the regular expression
+            if (regx.test(mail)) { // Note: Changed 'regx.text' to 'regx.test'
+                // If valid, display a success message
+                alert("You have provided a valid email ID");
+                return true;
+            } else {
+                // If invalid, display an error message
+                alert("Sorry! Incorrect email ID");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h4>Email Validation</h4>
+
+    <!-- Form with an email input and a submit button -->
+    <form>
+        <!-- Input field for email, with required attribute to ensure it is not empty -->
+        <input type="email" id="text" placeholder="email" required>
+        
+        <!-- Button to trigger the email validation function on click -->
+        <button type="submit" onclick="validate()">Submit</button>
+    </form>
+</body>
+
+</html>

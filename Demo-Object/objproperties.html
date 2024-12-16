@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proporties</title>
+</head>
+
+<body>
+    <h2>Objects Proporties</h2>
+    <div id="demo4"></div>
+
+    <script>
+        // Create the student object using object literal syntax
+        var student3 = {
+            name: 'Shiva', // Initial name of the student
+            age: 25,       // Initial age of the student
+            studies: 'MBA' // Course the student is studying
+        };
+
+        // Update the student's age property
+        //  student3.age = 35;
+        x = student3.age
+        // Display the updated student details in the element with ID "demo4"
+        document.getElementById("demo4").innerHTML =
+            student3.name + " of the age " + x + " studies " + student3.studies;
+
+    </script>
+
+    <h3>Methods</h3>
+    <div id="demo"></div>
+    <!-- Updated button with a valid id -->
+    <button id="clickMe">Click Me</button>
+
+    <script>
+        // Define an object with properties
+        let user = {
+            name: 'Shiva', // User's name
+            age: 25        // User's age
+        };
+
+        // Define a method for the user object
+        function sayHi() {
+            alert("Hello, " + user.name + "!"); // Greet using the user's name
+        }
+
+        // Add the method to the user object
+        user.msg = sayHi;
+
+        // Display a greeting in the demo div
+        document.getElementById("demo").innerHTML = "Hi " + user.name;
+
+        // Attach the user.msg function to the button's onclick event
+        document.getElementById("clickMe").onclick = user.msg;
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script type="text/javascript">
+        // Function to validate the form inputs
+        function Validate() {
+            // Check if the email field is empty
+            if (document.myForm.email.value == "") {
+                alert("Please provide your email ID"); // Alert user to provide an email
+                document.myForm.email.focus(); // Set focus on the email input field
+                return false; // Prevent form submission
+            }
+            // Check if the password field is empty
+            else if (document.myForm.password.value == "") {
+                alert("Please provide your password"); // Alert user to provide a password
+                document.myForm.password.focus(); // Set focus on the password input field
+                return false; // Prevent form submission
+            }
+            // If all validations pass
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <h4>Form Validation</h4>
+
+    <!-- Form for email and password input -->
+    <!-- The form's `onsubmit` event triggers the Validate function -->
+    <form action="msg.html" name="myForm" onsubmit="return Validate()">
+        <!-- Input field for email, marked as required -->
+        <input type="email" name="email" placeholder="Enter your email" required> <br>
+
+        <!-- Input field for password, marked as required -->
+        <input type="password" name="password" placeholder="Enter your password" required> <br>
+
+        <!-- Submit button to send the form -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>

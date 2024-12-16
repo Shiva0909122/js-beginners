@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+
+    <script>
+        // Example 1: Basic Promise to check course completion status
+        let PFSWD = new Promise(function (resolve, reject) {
+            let course_done = false; // Change to true to simulate course completion
+
+            // Check course status and resolve or reject the promise
+            if (course_done)
+                resolve();
+            else
+                reject();
+        });
+
+        // Handle the resolved and rejected states of the promise
+        PFSWD.then(function () {
+            document.write("The course has been completed, Happy Learning!<br>");
+        }).catch(function () {
+            document.write("The course is yet to be completed.<br>");
+        });
+
+        // ========================== //
+
+        // Example 2: Chained Promises to simulate course progression
+        let incomp_course = function () {
+            return new Promise(function (resolve, reject) {
+                resolve("The course has not been started yet. "); // Initial status
+            });
+        };
+
+        let projects = function (msg) {
+            return new Promise(function (resolve, reject) {
+                resolve(msg + "The course is pending because projects are not completed. "); // Add to message
+            });
+        };
+
+        let placement = function (msg) {
+            return new Promise(function (resolve, reject) {
+                resolve(msg + "The course has started, but projects are pending, not eligible for placements."); // Final status
+            });
+        };
+
+        // Chain the promises to simulate progression
+        incomp_course()
+            .then(function (result) {
+                return projects(result); // Pass the result to the next step
+            })
+            .then(function (result) {
+                return placement(result); // Pass the result to the next step
+            })
+            .then(function (result) {
+                console.log("Done! " + result); // Log the final result
+            });
+    </script>
+</body>
+
+</html>

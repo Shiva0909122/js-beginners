@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Keyword</title>
+</head>
+
+<body>
+    <h4>This Keyword</h4>
+
+    <!-- Example 1: `this` keyword in a global function -->
+    <script>
+        var a = 90; // Global variable
+        function myfun() {
+            var a = 908; // Local variable scoped to the function
+
+            // Uncomment to observe the difference:
+            // `a` accesses the local variable
+            // alert("Val " + a);
+
+            // `this.a` refers to the global `a` when in a non-strict mode
+            // alert("This val " + this.a);
+        }
+        myfun(); // Call the function
+    </script>
+
+    <!-- Example 2: `this` keyword in an object -->
+    <script>
+        const random = {
+            name: "shivarth", // Object property
+            video: ["js", "this", "keyword"], // Array property
+
+            // Method using `this` to access object properties
+            info() {
+                // Uncomment to see a greeting using `this.name`
+                // console.log("Hi, " + this.name);
+
+                // Using `this` inside a callback function with `forEach`
+                this.video.forEach(function (tag) {
+                    // `this.name` may be undefined in a regular function inside `forEach`
+                    console.log(this.name, tag);
+                }, this); // Passing `this` as the second argument binds it to the outer `this`
+            }
+        };
+        random.info(); // Call the `info` method
+    </script>
+</body>
+
+</html>
